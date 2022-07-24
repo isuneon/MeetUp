@@ -1,0 +1,60 @@
+
+  <div class="card"> 
+    <div class="card-body">
+      <div innerHtml="{{group.description}}"></div>
+    </div>
+
+    <div class="rating">
+      <div class="title">
+          <b>Puntuación del grupo</b>
+        </div>
+      <rating
+              [value]="group.rating">
+      </rating>
+    </div>
+
+      <div class="organizadores">
+        <img [src]="group.organizer.photo.thumb_link" *ngIf="group.organizer.photo">
+        <img src="https://secure.meetupstatic.com/img/noPhoto_50.png" style="width: 80px" *ngIf="!group.organizer.photo">
+        <div class="detail">
+          <p>Organizado por</p>
+          <p><b>{{group.organizer.name}}</b></p>
+        </div>
+        
+      </div>
+
+
+    <div class="temas" *ngIf="group.topics && group.topics.length >0">
+        <div class="title">
+          <b>Temas del grupo</b>
+        </div>
+
+        <div class="topic">
+          <div class="topic-name" *ngFor="let topic of group.topics">
+            {{topic.name}}
+          </div>
+        </div>
+        
+
+    </div>
+  </div>
+
+  <div class="card"> 
+    <div class="card-body">
+
+      <tabset>
+        <tab heading="Miembros">
+          <app-members-groups
+            [groupID]="groupID">
+          </app-members-groups>
+        </tab>
+        <tab heading="Comentatios">
+          <app-comments-groups
+            [groupID]="groupID">
+          </app-comments-groups>
+        </tab>
+      </tabset>
+
+      
+    </div> 
+  </div>

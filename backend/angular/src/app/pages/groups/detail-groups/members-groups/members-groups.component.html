@@ -1,0 +1,39 @@
+
+          <div  class="dividedList"  *ngFor="let member of members">
+            <div  class="img">
+              <img [src]="member.photo.thumb_link" *ngIf="member.photo">
+              <img src="https://secure.meetupstatic.com/img/noPhoto_50.png" style="width: 80px" *ngIf="!member.photo">
+            </div>
+            <div class="detail">
+              <h4 class="flush--bottom inlineBlock" >
+              <a [href]="member.link" class="memName">{{member.name}}</a>
+              </h4>
+              
+
+              <ul class="resetList clear-both memberStats small">
+                <li>
+                  <b> Ciudad: </b>{{member.city}}
+                </li>
+                <li>
+                  <b> Link: </b> {{member.link}}
+                </li>
+              </ul>
+            </div>
+
+          </div>
+
+
+          <div class="data-table__footer">
+            <pagination *ngIf="config.paging"
+                        [(ngModel)]="page"
+                        [totalItems]="length"
+                        [itemsPerPage]="itemsPerPage"
+                        [maxSize]="maxSize"
+                        [boundaryLinks]="true"
+                        [rotate]="false"
+                        (pageChanged)="onChangeTable(config, $event)"
+                        (numPages)="numPages = $event">
+            </pagination>
+          </div>
+        
+       

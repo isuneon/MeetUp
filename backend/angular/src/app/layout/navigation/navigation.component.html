@@ -1,0 +1,28 @@
+<aside class="sidebar" [class.toggled]="sidebarVisible">
+    <perfect-scrollbar>
+
+        <div class="user" dropdown>
+            <div class="user__info" dropdownToggle>
+                <img class="user__img" [src]="userInfo.photo.thumb_link" alt="">
+                <div>
+                    <div class="user__name">{{userInfo.name}}</div>
+                    <div class="user__email">{{userInfo.email}}</div>
+                    <div class="user__email">{{userInfo.id}}</div>
+                </div>
+            </div>
+
+            <div *dropdownMenu class="dropdown-menu dropdown-menu-right">
+                <a class="dropdown-item" href="">View Profile</a>
+                <a class="dropdown-item" href="">Settings</a>
+                <a class="dropdown-item" (click)="logout()">Logout</a>
+            </div>
+        </div> 
+
+        <ul class="navigation">
+            <li routerLinkActive="navigation__active"><a [routerLink]="['/home']"><i class="zmdi zmdi-home"></i> Home</a></li>
+            <li routerLinkActive="navigation__active"><a [routerLink]="['/groups']"><i class="zmdi zmdi-format-underlined"></i> Grupos</a></li>
+            <li routerLinkActive="navigation__active"><a [routerLink]="['/home']"><i class="zmdi zmdi-widgets"></i> Eventos</a></li>
+            
+        </ul>
+    </perfect-scrollbar>
+</aside>

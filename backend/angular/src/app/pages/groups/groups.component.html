@@ -1,0 +1,57 @@
+<section class="content" *ngIf="!showDetail">
+  <header class="content__title">
+    <h1> Mis Grupos</h1>
+  </header>
+
+  <div class="card"> 
+    <div class="card-body">
+
+      <div class="data-table">
+        <div class="data-table__header">
+          <div class="form-group data-table__filter">
+            <input *ngIf="config.filtering"
+                   placeholder="Filter all columns"
+                   [ngTableFiltering]="config.filtering"
+                   class="form-control"
+                   (tableChanged)="onChangeTable(config)"/>
+            <i class="form-group__bar"></i>
+          </div>
+        </div>
+
+        <ng-table [config]="config"
+                  (tableChanged)="onChangeTable(config)"
+                  [rows]="rows" [columns]="columns" (cellClicked)="showDetails($event)">
+        </ng-table>
+
+        <div class="data-table__footer">
+          <pagination *ngIf="config.paging"
+                      [(ngModel)]="page"
+                      [totalItems]="length"
+                      [itemsPerPage]="itemsPerPage"
+                      [maxSize]="maxSize"
+                      [boundaryLinks]="true"
+                      [rotate]="false"
+                      (pageChanged)="onChangeTable(config, $event)"
+                      (numPages)="numPages = $event">
+          </pagination>
+        </div>
+      </div>
+
+      
+    </div>
+  </div>
+
+
+</section>
+
+<section class="content" *ngIf="showDetail">
+  <header class="content__title">
+    <h1><i class="zmdi zmdi-arrow-back zmd-fw icon" (click)="back()" ></i> {{dataGroupDetail.name}} {{dataGroupDetail.id}}</h1>
+  </header>
+
+  
+  <app-detail-groups
+  [groupID]="dataGroupDetail.id">
+    
+  </app-detail-groups>
+</section>

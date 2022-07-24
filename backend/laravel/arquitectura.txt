@@ -1,0 +1,24 @@
+//MENSAJES DE ERROR PERSONALIZADOS
+	App\Exceptions\Handler.php
+		Funcion -> render();
+    	Mensajes perosonalizados
+    		* Validaciones
+    		* REGISTRO CON EL IDENTIFICADOR
+    		* AUTENTICACION
+    		* AUTERIZACION
+    		* RUTA NO EXISTE
+    		* NO EXISTE METODO(GET,POST....)
+    		* OTROS ERRORES HTTP
+    		* ERRORES Query
+
+//MIGRACIONES
+	database\migrations
+
+//MODELOS
+	App\
+
+//CONTROLADORES
+	App\Http\Controllers
+
+	-- Base Controller personalizado --
+	App\Http\Controllers\ApiController.php

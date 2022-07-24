@@ -1,0 +1,39 @@
+.temas{
+    padding: 10px 28px;;
+    .topic-name{
+        float: left;
+        background-color: #32c787;
+        padding: 5px 20px 5px 20px;
+        color: #fff;
+        border-radius: 5px;
+        font-size: 14px;
+        font-weight: bold;
+        margin-top: 10px; 
+        margin-left: 10px;
+    }
+    .title{
+        margin-bottom: 10px;
+    }
+}
+
+.organizadores{
+    margin: 10px 28px;;
+    border: 1px #b1a6a6 solid;
+    width: 50%;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    p{
+        padding-left: 20px;
+    }
+    .detail{
+        float: left;
+    }
+    img{
+        float: left;
+    }
+}
+
+.rating{
+   margin: 10px 28px;; 
+}

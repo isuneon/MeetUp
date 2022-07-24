@@ -1,0 +1,40 @@
+.dividedList{
+	list-style: none;
+    padding: 0;
+    margin: 0;
+    //border-top: 1px solid rgba(0,0,0,.12);
+    li{
+    	padding: 16px 0 0;
+    	//border-top: 1px solid rgba(0,0,0,.12);
+    }
+    .main{
+    	border-top: 1px solid rgba(0,0,0,.12);
+    }
+    .img{
+    	border-top: 1px solid rgba(0,0,0,.12);
+    	width: 10%;
+		float: left;
+		padding-top: 10px;
+        img{
+            width: 80px;
+            height: 80px; 
+        }
+        
+    }
+    .detail{
+        ul{
+            list-style: none;
+            padding-left: 10px;
+        }
+    	border-top: 1px solid rgba(0,0,0,.12);
+    	width: 90%;
+		float: left;
+		padding-left: 40px;
+		padding-top: 10px;
+    }
+}
+
+.divsincomentarios{
+    text-align: center;
+    font-weight: bold;
+} 

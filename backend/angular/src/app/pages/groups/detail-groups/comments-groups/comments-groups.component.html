@@ -1,0 +1,43 @@
+
+          <div  class="dividedList" *ngFor="let comment of comments">
+            <div  class="img">
+              <img [src]="comment.photo_url" *ngIf="comment.photo_url">
+              <img src="https://secure.meetupstatic.com/img/noPhoto_50.png" style="width: 80px" *ngIf="!comment.photo_url">
+            </div>
+            <div class="detail">
+              <h4 class="flush--bottom inlineBlock" >
+              <a [href]="comment.link" class="memName">{{comment.name}}</a>
+              </h4>
+              
+
+              <ul class="resetList clear-both memberStats small">
+                <li>
+                  <b> Comentario: </b> {{comment.comment}}
+                </li>
+                <li>
+                  <b> Ciudad: </b> {{comment.city}}
+                </li>
+              </ul>
+            </div>
+
+          </div>
+
+
+
+          <div class="data-table__footer" *ngIf="comments.length > 0">
+            <pagination *ngIf="config.paging"
+                        [(ngModel)]="page"
+                        [totalItems]="length"
+                        [itemsPerPage]="itemsPerPage"
+                        [maxSize]="maxSize"
+                        [boundaryLinks]="true"
+                        [rotate]="false"
+                        (pageChanged)="onChangeTable(config, $event)"
+                        (numPages)="numPages = $event">
+            </pagination>
+          </div>
+
+          <div *ngIf="comments.length == 0" class="divsincomentarios">
+            <p>El grupo no tiene comentarios registrados.</p>
+          </div>
+        
